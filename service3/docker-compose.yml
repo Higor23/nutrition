@@ -1,0 +1,41 @@
+version: "3.7"
+services:
+  service3:
+    build:
+      args: 
+          user: service3
+          uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 8883:80
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/:/etc/nginx/conf.d/
+
+  mysql:
+    container_name: service3-mysql
+    image: mysql:5.7.22
+    environment: 
+        MYSQL_DATABASE: ${DB_DATABASE}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        MYSQL_PASSWORD: ${DB_PASSWORD}
+        MYSQL_USER: ${DB_USERNAME}
+    volumes: 
+        - ./.docker/mysql/dbdata:/var/lib/mysql
+    ports: 
+        - 3303:3306
+
+  phpmyadmin:
+      container_name: service3-phpmyadmin
+      image: phpmyadmin/phpmyadmin
+      ports:
+          - '9092:80'
+      environment:
+          PMA_HOST: mysql

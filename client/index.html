@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/imc.css">
+  <title>Calcular IMC</title>
+</head>
+
+<body>
+  <script src="js/calcular-imc.js"></script>
+
+  <div class="menu">
+    <ul>
+      <a href="index.html"><li>Home</li></a>
+      <a href="cadastrar-usuario.html"><li>Cadastrar Usuário</li></a>
+      <a href="noticias.html"><li>Blog</li></a>
+    </ul>
+  </div>
+  <div class="container-imc">
+    <div class="form-calculo">
+    <form onsubmit="calcularImc()">
+      <h3>Calcular IMC</h3>
+      <label for="peso">Peso</label>
+      <input name="peso" id="peso" type="text">
+      <br><br>
+      <label for="altura">Altura</label>
+      <input name="altura" id="altura" type="text">
+      <br><br>
+      <button type="submit">Calcular</button>
+
+      <div>
+        <p id="imc"></p>
+        <p id="classificacao"></p>
+      </div>
+    </div>
+  </div>
+  </form>
+</body>
+
+</html>
