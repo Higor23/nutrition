@@ -85,7 +85,7 @@ docker ps -a
 ### Service 3
 Acesse o serviço 3:
 ```sh
-cd service2
+cd service3
 ```
 Crie o arquivo .env
 ```sh
