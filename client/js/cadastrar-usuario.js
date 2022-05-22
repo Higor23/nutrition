@@ -23,7 +23,7 @@ function enviarValores(url, body) {
   request.onload = function() {
     if(this.response){
       retorno = JSON.parse(this.response)
-      divRetorno = document.querySelector('#usuario-cadastrado').innerHTML = "Seja bem vindo " + retorno.name;
+      divRetorno = document.querySelector('#usuario-cadastrado').innerHTML = "Seja bem vindo " + retorno.name +"!";
     }
   }
 }

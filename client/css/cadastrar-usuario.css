@@ -1,21 +1,24 @@
+body{
+  margin: 0;
+}
+
 .container-imc{
   display: flex;
   justify-content: center;
   text-align: center;
-
-
 }
 
 .form-calculo{
   font-size: 20px;
   border-radius: 20px;
-  background-color: rgb(118, 200, 56);
+  background-color: #86b22c;
   padding: 50px;
   width: 20%;
   margin-top: 50px;
 }
 input {
   border-radius: 10px;
+  border: none;
 }
 button{
   background-color: rgb(0, 44, 1);
@@ -33,12 +36,17 @@ input{
 .menu{
   display: flex;
   justify-content: center;
-  background-color: rgb(118, 200, 56);
+  background-color: #86b22c;
   margin: 0;
 }
+
 
 .menu ul li{
   display: inline-block;
   padding: 20px;
   font-size: 20px;
+
+}
+.menu a {
+  color: black;
 }
